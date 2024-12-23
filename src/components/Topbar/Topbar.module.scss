@@ -1,0 +1,9 @@
+.main_topbar {
+    font-size: 80%;
+    height: 2%;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
