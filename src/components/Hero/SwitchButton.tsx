@@ -8,19 +8,24 @@ export default function SwitchButton({
   toggleState: boolean,
   changeToggleState: (toggle: boolean) => void
 }) {
+  const [isHovered, setIsHovered] = React.useState(false);
   const toggleLeft =
-    <MdToggleOff color={"white"} size={"3em"}
+    <MdToggleOff color={`rgba(255,255,255,${isHovered ? 1 : 0.5})`} size={"3em"}
       style={{
         cursor: "pointer"
       }}
       onClick={() => changeToggleState(!toggleState)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     />;
   const toggleRight =
-    <MdToggleOn color={"white"} size={"3em"}
+    <MdToggleOn color={`rgba(255,255,255,${isHovered ? 1 : 0.5})`} size={"3em"}
       style={{
         cursor: "pointer"
       }}
       onClick={() => changeToggleState(!toggleState)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     />;
   return (<span
     style={
